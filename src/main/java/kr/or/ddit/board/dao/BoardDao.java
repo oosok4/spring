@@ -1,5 +1,10 @@
 package kr.or.ddit.board.dao;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class BoardDao implements IboardDao {
 	
 
