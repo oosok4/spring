@@ -5,24 +5,46 @@ import kr.or.ddit.board.dao.IboardDao;
 
 public class BoardService implements IboardService {
 	
-	private IboardDao dao;
-
-	public IboardDao getDao() {
-		return dao;
+	private IboardDao boardDao;
+	private String name;
+	
+	public BoardService() {
+		
+	}
+	
+	public BoardService(IboardDao boardDao, String name) {
+		this.boardDao = boardDao;
+		this.name = name;
 	}
 
-	public void setDao(IboardDao dao) {
-		this.dao = dao;
+	public BoardService(String name) {
+		this.name = name;
+	}
+
+	public BoardService(IboardDao boardDao) {
+		this.boardDao = boardDao;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setBoardDao(IboardDao boardDao) {
+		this.boardDao = boardDao;
 	}
 
 	@Override
 	public String sayHello() {
-		return dao.sayHello();
+		return boardDao.sayHello();
 	}
 
 	@Override
 	public IboardDao getBoardDao() {
-		return dao;
+		return boardDao;
 	}
 
 	
