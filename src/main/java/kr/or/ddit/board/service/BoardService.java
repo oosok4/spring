@@ -9,16 +9,16 @@ import kr.or.ddit.board.dao.IboardDao;
 
 @Service
 public class BoardService implements IboardService {
-	
-	@Resource(name="boardDao")
+
+	@Resource(name = "boardDao")
 	private IboardDao boardDao;
-	
+
 	private String name;
-	
+
 	public BoardService() {
-		
+
 	}
-	
+
 	public BoardService(IboardDao boardDao, String name) {
 		this.boardDao = boardDao;
 		this.name = name;
@@ -53,9 +53,5 @@ public class BoardService implements IboardService {
 	public IboardDao getBoardDao() {
 		return boardDao;
 	}
-
-	
-	
-	
 
 }
