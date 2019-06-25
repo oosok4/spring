@@ -29,15 +29,34 @@ public class UserService implements IuserService {
 		return userDao.userList();
 	}
 
+	/**
+	 * 
+	 */
 	@Override
 	public int insertUser(UserVo userVo) {
 		return userDao.insertUser(userVo);
 	}
 
+	/**
+	 * 
+	 */
 	@Override
 	public int deleteUser(String userId) {
 		return userDao.deleteUser(userId);
 		
+	}
+
+	/**
+	 * 
+	* Method : getUser
+	* 작성자 : PC17
+	* 변경이력 :
+	* @return
+	* Method 설명 :사용자 정보 조회
+	 */
+	@Override
+	public UserVo getUser(String userId) {
+		return userDao.getUser(userId);
 	}
 
 }

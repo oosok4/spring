@@ -63,7 +63,7 @@ public class UserDaoTest extends LogicTestEnv{
 		/***Given***/
 		//사용자정보를 담고 있는 vo객체 준비
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		UserVo userVo = new UserVo("민호1212", "oosok99", "마이노", "1234", "인천", "대전", "5432", sdf.parse("1993-10-08"));
+		UserVo userVo = new UserVo("oosok77", "민호1", "마이노1", "12341", "인천1", "대전1", "54321", sdf.parse("1993-10-09"));
 
 		/***When***/
 		int result = userDao.insertUser(userVo);
@@ -74,6 +74,27 @@ public class UserDaoTest extends LogicTestEnv{
 		
 		//userDao.deleteUser(userVo.getUserId());
 
+	}
+	
+	/**
+	 * 
+	* Method : getUserTest
+	* 작성자 : PC17
+	* 변경이력 :
+	* Method 설명 :사용자 정보 조회 테스트
+	 */
+	@Test
+	public void getUserTest() {
+		/***Given***/
+		String userId = "brown";
+		/***When***/
+
+		UserVo userVo = userDao.getUser(userId);
+		/***Then***/
+		
+		assertEquals("브라운", userVo.getName());
+		assertEquals("곰", userVo.getAlias());
+		
 	}
 
 }

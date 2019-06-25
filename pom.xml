@@ -47,7 +47,6 @@
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>1.2.3</version>
-			<scope>test</scope>
 		</dependency>
 
 		<!-- mybatis를 사용하기 위한 jar파일! -->

@@ -59,7 +59,7 @@ public class UserServiceTest extends LogicTestEnv{
 		/***Given***/
 		//사용자정보를 담고 있는 vo객체 준비
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		UserVo userVo = new UserVo("민호1213", "oosok991", "마이노", "1234", "인천", "대전", "5432", sdf.parse("1993-10-08"));
+		UserVo userVo = new UserVo("민호754f6", "oosok95f619", "마이노", "1234", "인천", "대전", "5432", sdf.parse("1993-10-08"));
 
 		/***When***/
 		int result = userService.insertUser(userVo);
@@ -70,6 +70,25 @@ public class UserServiceTest extends LogicTestEnv{
 		
 		userService.deleteUser(userVo.getUserId());
 
+	}
+	
+	/**
+	 * 
+	* Method : getUserTest
+	* 작성자 : PC17
+	* 변경이력 :
+	* Method 설명 : 사용자 정보조회 토스트
+	 */
+	@Test
+	public void getUserTest() {
+		/***Given***/
+		String userId = "brown";
+		/***When***/
+		UserVo userVo = userService.getUser(userId);
+
+		/***Then***/
+		assertEquals("brown", userVo.getUserId());
+		
 	}
 
 }

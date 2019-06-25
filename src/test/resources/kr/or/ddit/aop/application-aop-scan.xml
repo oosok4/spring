@@ -9,7 +9,15 @@
 
 	<context:component-scan base-package="kr.or.ddit">
 		<context:include-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/>
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.COntroller"/>
 	</context:component-scan>
+
+<!-- 	<bean id="boardService" class="kr.or.ddit.board.service.BoardService"/> -->
+<!-- 	<bean id="profilingAspect" class="kr.or.ddit.ProfilingAspect"/> -->
+<!-- 	<bean id="boardDao" class="kr.or.ddit.board.dao.BoardDao"/> -->
+
+
+
 	<aop:aspectj-autoproxy/>
 
 	<context:annotation-config/>		

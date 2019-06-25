@@ -1,9 +1,10 @@
 package kr.or.ddit.aop;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import javax.annotation.Resource;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -19,6 +20,7 @@ public class AopTest {
 	@Resource(name="boardService")
 	private IboardService boardService;
 
+	
 	@Test
 	public void aopBeforetest() {
 		/***Given***/
@@ -28,6 +30,11 @@ public class AopTest {
 		/***Then***/
 		assertEquals("boardDao sayHello", msg);
 	}
+	
+	@Ignore
+	@Test
+	public void dummy() {}
+	
 	
 
 }

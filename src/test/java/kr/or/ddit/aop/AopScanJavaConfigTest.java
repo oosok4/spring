@@ -13,7 +13,7 @@ import kr.or.ddit.board.service.IboardService;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes= {AopScanConfig.class})
+@ContextConfiguration("application-ioc-st.xml")
 public class AopScanJavaConfigTest {
 	
 	@Resource(name="boardService")

@@ -19,5 +19,15 @@ public interface IuserService {
 	int insertUser(UserVo userVo);
 
 	int deleteUser(String userId);
+	
+	/**
+	 * 
+	* Method : getUser
+	* 작성자 : PC17
+	* 변경이력 :
+	* @return
+	* Method 설명 :사용자 정보 조회
+	 */
+	UserVo getUser(String userId);
 
 }

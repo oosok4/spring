@@ -1,7 +1,6 @@
-
 delete users;
 
-Insert into PC17_TEST.USERS (USERID,NAME,ALIAS,PASS,ADDR1,ADDR2,ZIPCD,BIRTH,PATH,FILENAME) values ('brown','브라운','곰','brown1234','대전 동구 가양 1동','592-14','12345',to_date('93/03/23','RR/MM/DD'),'d:\upload\2019\06\e71083d3-8dbc-4e61-8cc8-2512d1fc8b2e.png','재고없음.png');
+Insert into PC17_TEST.USERS (USERID,NAME,ALIAS,PASS,ADDR1,ADDR2,ZIPCD,BIRTH,PATH,FILENAME) values ('brown','브라운','곰','c6347b73d5b1f7c77f8be828ee3e871c819578f23779c7d5e082ae2b36a44','대전 동구 가양 1동','592-14','12345',to_date('93/03/23','RR/MM/DD'),'d:\upload\2019\06\e71083d3-8dbc-4e61-8cc8-2512d1fc8b2e.png','재고없음.png');
 Insert into PC17_TEST.USERS (USERID,NAME,ALIAS,PASS,ADDR1,ADDR2,ZIPCD,BIRTH,PATH,FILENAME) values ('user54','사용자54','사용자별명54','741de0be418f63aaeb683371c1e4fcd6199c546519a382ea0f6794bc4f727a3',null,null,null,null,null,null);
 Insert into PC17_TEST.USERS (USERID,NAME,ALIAS,PASS,ADDR1,ADDR2,ZIPCD,BIRTH,PATH,FILENAME) values ('user55','사용자55','사용자별명55','c8dfcb2d2e5b6320295e42ebf2d74cb366cc64157e37757147fe1424ce455897',null,null,null,null,null,null);
 Insert into PC17_TEST.USERS (USERID,NAME,ALIAS,PASS,ADDR1,ADDR2,ZIPCD,BIRTH,PATH,FILENAME) values ('user57','사용자57','사용자별명57','beb5b83541f3a23ea857fb350917e35e87ea3d9c9737fcf7808597c9803969',null,null,null,null,null,null);

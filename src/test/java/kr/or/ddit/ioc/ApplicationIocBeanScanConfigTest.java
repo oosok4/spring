@@ -13,6 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.or.ddit.board.dao.IboardDao;
 import kr.or.ddit.board.service.IboardService;
+import kr.or.ddit.testenv.LogicTestEnv;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes= {ApplicationIocBeanScanConfig.class})
