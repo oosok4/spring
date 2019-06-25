@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -15,6 +16,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.or.ddit.testenv.LogicTestEnv;
+import kr.or.ddit.user.model.PageVo;
 import kr.or.ddit.user.model.UserVo;
 
 
@@ -89,6 +91,40 @@ public class UserServiceTest extends LogicTestEnv{
 		/***Then***/
 		assertEquals("brown", userVo.getUserId());
 		
+	}
+	
+	@Test
+	public void updateUsertest() {
+		/***Given***/
+		String userId = "brown";
+		/***When***/
+		UserVo userVo = userService.getUser(userId);
+		int result = userService.updateUser(userVo);
+		/***Then***/
+		assertEquals(1, result);
+	}
+	
+	@Test
+	public void UserCntTest() {
+		/***Given***/
+
+		/***When***/
+		int result = userService.usersCnt();
+
+		/***Then***/
+		assertEquals(103, result);
+	}
+	
+	@Test
+	public void userpagingListTest() {
+		/***Given***/
+		PageVo pv = new PageVo(1,10);
+
+		/***When***/
+		Map<String, Object> userPagingList = userService.userpagingList(pv);
+
+		/***Then***/
+		assertNotNull(userPagingList);
 	}
 
 }

@@ -7,7 +7,7 @@
 		<li class="active"><a
 			href="${cp}/userList">사용자리스트</a></li>
 		<li class="active"><a
-			href="${cp}/userPagingList?page=1&pageSize=10">사용자페이징리스트</a></li>
+			href="${cp}/userPagingList">사용자페이징리스트</a></li>
 		<li class="active"><a href="${cp}/lprodList">lprod리스트</a></li>
 	</ul>
 </div>

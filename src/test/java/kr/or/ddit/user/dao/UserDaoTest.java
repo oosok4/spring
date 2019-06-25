@@ -16,6 +16,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.or.ddit.testenv.LogicTestEnv;
+import kr.or.ddit.user.model.PageVo;
 import kr.or.ddit.user.model.UserVo;
 
 
@@ -96,5 +97,42 @@ public class UserDaoTest extends LogicTestEnv{
 		assertEquals("곰", userVo.getAlias());
 		
 	}
+	
+	@Test
+	public void updateUserTest() {
+		/***Given***/
+		String userId = "brown";
+		/***When***/
+		UserVo uservo = userDao.getUser(userId);
+		int result = userDao.updateUser(uservo);
+
+		/***Then***/
+		assertEquals(1, result);
+	}
+	
+	@Test
+	public void usersCntTest() {
+		/***Given***/
+
+		/***When***/
+		int result = userDao.usersCnt();
+		/***Then***/
+		logger.debug("result : {}",result);
+		assertEquals(103, result);
+	}
+	
+	@Test
+	public void userPagingListTest() {
+		/***Given***/
+		PageVo pv = new PageVo(1,10);
+
+		/***When***/
+		List<UserVo> userPagingList =userDao.userpagingList(pv);
+
+		/***Then***/
+		assertNotNull(userPagingList);
+		logger.debug("userPagingList : {}",userPagingList);
+	}
+	
 
 }
