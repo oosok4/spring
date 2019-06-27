@@ -20,11 +20,12 @@
 
 
 
-<title>Jsp</title>
+<title>사용자 상세조회</title>
 
 
 <%@include file="/WEB-INF/views/common/basicLib.jsp"%>
 <script>
+	$(document).ready(function)
 	
 </script>
 
@@ -56,15 +57,13 @@
 								<h2 class="sub-header">사용자 상세</h2>
 
 								<form id="frm" class="form-horizontal" role="form"
-									action="${cp }/user/modify"
-									method="get">
+									action="${cp }/user/modify" method="get">
 
 									<div class="form-group">
 										<label for="userNm" class="col-sm-2 control-label">사용자
 											사진</label>
 										<div class="col-sm-10">
-											<img
-												src="${cp }/user/profile?userId=${userVo.userId}" />
+											<img src="${cp }/user/profile?userId=${userVo.userId}" />
 										</div>
 									</div>
 

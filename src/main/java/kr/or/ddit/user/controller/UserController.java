@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.or.ddit.encrypt.kisa.sha256.KISA_SHA256;
 import kr.or.ddit.user.model.PageVo;
@@ -202,7 +203,9 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/modify",method = RequestMethod.POST)
-	public String userModify(UserVo userVo,String userId,MultipartFile profile,Model model, HttpSession session) throws IllegalStateException, IOException {
+	public String userModify(UserVo userVo,String userId,MultipartFile profile
+							,Model model, HttpSession session,
+							RedirectAttributes redirectAttributes) throws IllegalStateException, IOException {
 		// 추후 ajax요청으로 분리
 		//userVo.setPass(KISA_SHA256.encrypt(userVo.getPass()));
 		
@@ -224,8 +227,10 @@ public class UserController {
 		//userVo.setPass(KISA_SHA256.encrypt(userVo.getPass()));
 		int updateCnt  = userService.updateUser(userVo);
 		if(updateCnt == 1) {
-			session.setAttribute("msg", "등록되었습니다");
-			return "redirect:/user/user?userId="+userVo.getUserId();
+			//session.setAttribute("msg", "등록되었습니다");
+			redirectAttributes.addFlashAttribute("msg","등록되었습니다");
+			redirectAttributes.addAttribute("userId",userVo.getUserId()); //파라미터 붙여주는 문구
+			return "redirect:/user/user";
 		}
 		else
 			return userModify(userVo.getUserId(), model);
