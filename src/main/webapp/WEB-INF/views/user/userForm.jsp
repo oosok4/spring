@@ -55,7 +55,7 @@
 		});
 
 		//개발용 데이타 초기화 함수 - 추후 지울것
-		//dataInit();
+		dataInit();
 
 	});
 
@@ -95,7 +95,7 @@
 								<h2 class="sub-header">사용자 등록</h2>
 
 								<form id="frm" class="form-horizontal" role="form"
-									action="${cp }/userForm"
+									action="${cp }/user/form"
 									method="post" enctype="multipart/form-data">
 
 									<div class="form-group">
@@ -186,7 +186,7 @@
 									<br>
 									<div class="form-group">
 										<div class="col-sm-offset-2 col-sm-10">
-											<button id="userRegBtn" type="button" class="btn btn-default">회원가입</button>
+											<button id="userRegBtn" type="submit" class="btn btn-default">회원가입</button>
 										</div>
 									</div>
 								</form>

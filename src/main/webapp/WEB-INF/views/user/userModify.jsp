@@ -148,7 +148,7 @@
 							<div class="col-sm-8 blog-main">
 								<h2 class="sub-header">회원정보 수정</h2>
 
-								<form id="frm" class="form-horizontal" role="form" action="${cp }/UserAdmit"
+								<form id="frm" class="form-horizontal" role="form" action="${cp }/user/modify"
 								 method="post" enctype="multipart/form-data">
 
 									<div class="form-group">
@@ -167,13 +167,13 @@
 										</div>
 									</div>
 
-									<div class="form-group">
-										<label for="userNm" class="col-sm-3 control-label">비밀번호</label>
-										<div class="col-sm-9">
-											<input type="password" class="form-control" id="pass" name="pass"
-												placeholder="사용자 비밀번호" value="${userVo.pass }">
-										</div>
-									</div>
+<!-- 									<div class="form-group"> -->
+<!-- 										<label for="userNm" class="col-sm-3 control-label">비밀번호</label> -->
+<!-- 										<div class="col-sm-9"> -->
+<!-- 											<input type="password" class="form-control" id="pass" name="pass" -->
+<%-- 												placeholder="사용자 비밀번호" value="${userVo.pass }"> --%>
+<!-- 										</div> -->
+<!-- 									</div> -->
 
 									<div class="form-group">
 										<label for="userNm" class="col-sm-3 control-label">사용자
@@ -231,7 +231,7 @@
 									<br><br><br><br>
 									<div class="form-group">
 										<div class="col-sm-offset-2 col-sm-10">
-											<button id="userRegBtn" type="button" class="btn btn-default">수정 완료</button>
+											<button id="userRegBtn" type="submit" class="btn btn-default">수정 완료</button>
 										</div>
 									</div>
 								</form>

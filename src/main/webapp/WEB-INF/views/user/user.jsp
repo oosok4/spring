@@ -25,11 +25,7 @@
 
 <%@include file="/WEB-INF/views/common/basicLib.jsp"%>
 <script>
-	$(document).ready(function() {
-		$("#btnAdmit").on("click", function() {
-			$("#frm").submit();
-		});
-	});
+	
 </script>
 
 
@@ -60,7 +56,7 @@
 								<h2 class="sub-header">사용자 상세</h2>
 
 								<form id="frm" class="form-horizontal" role="form"
-									action="${cp }/UserAdmit"
+									action="${cp }/user/modify"
 									method="get">
 
 									<div class="form-group">
@@ -68,7 +64,7 @@
 											사진</label>
 										<div class="col-sm-10">
 											<img
-												src="${cp }/profile?userId=${userVo.userId}" />
+												src="${cp }/user/profile?userId=${userVo.userId}" />
 										</div>
 									</div>
 
@@ -128,7 +124,7 @@
 
 									<div class="form-group">
 										<div class="col-sm-offset-2 col-sm-10">
-											<button id="btnAdmit" type="button" class="btn btn-default">사용자
+											<button id="btnAdmit" type="submit" class="btn btn-default">사용자
 												수정</button>
 										</div>
 									</div>

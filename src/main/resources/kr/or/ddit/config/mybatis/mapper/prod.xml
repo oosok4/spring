@@ -5,7 +5,7 @@
  <mapper namespace="prod">
  
  <select id ="getAllLprod" parameterType="string" resultType="ProdVo">
- 	select * from prod where prod_lgu=#{prod_lgu]}
+ 	select * from prod where prod_lgu=#{prod_lgu}
  </select>
  
  </mapper>

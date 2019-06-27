@@ -51,7 +51,6 @@
 		set
 		name = #{name},
 		ALIAS = #{alias},
-		PASS = #{pass},
 		ADDR1= #{addr1},
 		ADDR2=
 		#{addr2},

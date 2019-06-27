@@ -70,7 +70,7 @@
 
 								<h2 class="sub-header">사용자</h2>
 
-								<form id="frm" action="${cp }/user"
+								<form id="frm" action="${cp }/user/user"
 									method="get">
 									<input type="hidden" id="userId" name="userId" />
 
@@ -99,7 +99,7 @@
 									</table>
 								</div>
 
-								<a href="${cp }/userForm"
+								<a href="${cp }/user/form"
 									class="btn btn-default pull-right">사용자 등록</a>
 
 								<!-- 사용자수 : 105건 이것부터 만들어보자.
@@ -127,7 +127,7 @@
 											</c:when>
 											<c:otherwise>
 												<li><a
-													href="${cp}/userPagingList?page=${pageVo.page - 1}&pageSize=${pageVo.pageSize } ">«</a></li>
+													href="${cp}/user/pagingList?page=${pageVo.page - 1}&pageSize=${pageVo.pageSize } ">«</a></li>
 											</c:otherwise>
 
 										</c:choose>
@@ -157,7 +157,7 @@
 												</c:when>
 												<c:otherwise>
 													<li><a
-														href="${cp }/userPagingList?page=${i }&pageSize=${pageVo.pageSize }">${i }</a>
+														href="${cp }/user/pagingList?page=${i }&pageSize=${pageVo.pageSize }">${i }</a>
 													</li>
 												</c:otherwise>
 											</c:choose>
@@ -178,7 +178,7 @@
 											</c:when>
 											<c:otherwise>
 												<li><a
-													href="${cp}/userPagingList?page=${pageVo.page + 1}&pageSize=${pageVo.pageSize }">»</a></li>
+													href="${cp}/user/pagingList?page=${pageVo.page + 1}&pageSize=${pageVo.pageSize }">»</a></li>
 											</c:otherwise>
 
 										</c:choose>
