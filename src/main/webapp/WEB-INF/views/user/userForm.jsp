@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 
 <!DOCTYPE html>
@@ -16,29 +17,22 @@
 <meta name="author" content="">
 <link rel="icon" href="../../favicon.ico">
 
-
-
 <title>사용자 등록</title>
-
 
 <%@include file="/WEB-INF/views/common/basicLib.jsp"%>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
 	$(document).ready(function() {
-
 		var msg = '${msg}';
 		if (msg != '')
 			alert(msg);
-
 		$("#btnaddr").on("click", function() {
-
 			new daum.Postcode({
 				oncomplete : function(data) {
 					// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
 					// 예제를 참고하여 다양한 활용법을 확인해 보세요.
 					//주소 input에다가 value 설정 console.log(data.roadAddress);
 					//우편번호에 input value에 설정 data.zonecode
-
 					console.log(data.roadAddress);
 					console.log(data.zonecode);
 					$("#addr1").val(data.roadAddress);
@@ -95,8 +89,8 @@
 								<h2 class="sub-header">사용자 등록</h2>
 
 								<form id="frm" class="form-horizontal" role="form"
-									action="${cp }/user/form"
-									method="post" enctype="multipart/form-data">
+									action="${cp }/user/form" method="post"
+									enctype="multipart/form-data">
 
 									<div class="form-group">
 										<label for="userNm" class="col-sm-3 control-label">사용자
@@ -112,6 +106,7 @@
 										<div class="col-sm-9">
 											<input type="text" class="form-control" id="userId"
 												name="userId" placeholder="사용자 아이디" value="${param.userId }">
+											<form:errors path="userVo.userId" />
 										</div>
 									</div>
 
@@ -130,6 +125,7 @@
 										<div class="col-sm-9">
 											<input type="text" class="form-control" id="name" name="name"
 												placeholder="사용자 이름" value="${param.name }">
+												<form:errors path="userVo.name"/>
 										</div>
 									</div>
 
@@ -180,10 +176,7 @@
 									</div>
 
 
-									<br>
-									<br>
-									<br>
-									<br>
+									<br> <br> <br> <br>
 									<div class="form-group">
 										<div class="col-sm-offset-2 col-sm-10">
 											<button id="userRegBtn" type="submit" class="btn btn-default">회원가입</button>

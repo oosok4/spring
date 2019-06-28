@@ -3,16 +3,25 @@ package kr.or.ddit.user.model;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.validation.constraints.Size;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class UserVo {
 	
 	private String name;
+	
+	@Size(min=3)
 	private String userId;
+	
 	private String alias;
+	
 	private String pass;
+	
 	private String addr1;
+	
 	private String addr2;
+	
 	private String zipcd;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")

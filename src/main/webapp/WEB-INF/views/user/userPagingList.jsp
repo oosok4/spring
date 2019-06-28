@@ -100,7 +100,9 @@
 								</div>
 
 								<a href="${cp }/user/form"
-									class="btn btn-default pull-right">사용자 등록</a>
+									class="btn btn-default pull-right">사용자 등록</a><br><br>
+									<a href="${cp}/user/userListExcel" class="btn btn-default pull-right">엑셀다운</a>
+									
 
 								<!-- 사용자수 : 105건 이것부터 만들어보자.
 		페이지네이션 : 11건
@@ -183,9 +185,10 @@
 
 										</c:choose>
 
-
-
 									</ul>
+									
+									
+									
 								</div>
 							</div>
 						</div>
