@@ -57,7 +57,7 @@ public class MainControllerTest extends ControllerTestEnv{
 		 logger.debug("userId2 : {}",userId2);
 		 
 		assertEquals("brown", userId);
-		assertEquals("main", viewName);
+		assertEquals("tiles.main", viewName);
 	}
 	
 	@Test
@@ -68,7 +68,7 @@ public class MainControllerTest extends ControllerTestEnv{
 		/***When***/
 		mockMvc.perform(get("/main"))
 				.andExpect(status().isOk())
-				.andExpect(view().name("main"))
+				.andExpect(view().name("tiles.main"))
 				.andExpect(model().attribute("mainUserId", "brown"))
 				.andExpect(model().attributeExists("rangers"))
 				.andExpect(model().attributeExists("userVo"));

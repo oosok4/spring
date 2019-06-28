@@ -90,7 +90,7 @@ public class MainController {
 		model.addAttribute("mainUserId","brown");
 		//request.setAttribute("user", "brown");
 		
-		return "main";
+		return "tiles.main";
 		
 	}
 	
