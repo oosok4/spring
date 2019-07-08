@@ -112,7 +112,7 @@ public class UserServiceTest extends LogicTestEnv{
 		int result = userService.usersCnt();
 
 		/***Then***/
-		assertEquals(103, result);
+		assertEquals(106, result);
 	}
 	
 	@Test

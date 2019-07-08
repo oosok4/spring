@@ -49,7 +49,7 @@ public class UserControllerTest extends ControllerTestEnv{
 		ModelAndView mav = mvcResult.getModelAndView();
 		/***Then***/
 		assertEquals("user/userList", mav.getViewName());
-		assertEquals(103, ((List<UserVo>)mav.getModelMap().get("userList")).size());
+		assertEquals(106, ((List<UserVo>)mav.getModelMap().get("userList")).size());
 		
 	}
 	

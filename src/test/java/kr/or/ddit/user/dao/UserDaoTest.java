@@ -94,7 +94,7 @@ public class UserDaoTest extends LogicTestEnv{
 		/***Then***/
 		
 		assertEquals("브라운", userVo.getName());
-		assertEquals("곰", userVo.getAlias());
+		assertEquals("곰-한글", userVo.getAlias());
 		
 	}
 	
@@ -118,7 +118,7 @@ public class UserDaoTest extends LogicTestEnv{
 		int result = userDao.usersCnt();
 		/***Then***/
 		logger.debug("result : {}",result);
-		assertEquals(103, result);
+		assertEquals(106, result);
 	}
 	
 	@Test
