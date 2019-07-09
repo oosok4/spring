@@ -80,5 +80,6 @@ public class AjaxController {
 		//{userVo : {userId : 'brown',name='브라운',alias.....}}
 		
 		return "user/userHtml";
+		
 	}
 }

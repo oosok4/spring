@@ -4,7 +4,7 @@
 	xmlns:batch="http://www.springframework.org/schema/batch"
 	xsi:schemaLocation="http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+	
 	<bean class="org.springframework.batch.test.JobLauncherTestUtils"/>
 	
 	<batch:job-repository
@@ -49,6 +49,7 @@
 	
 
 </beans>
+
 
 
 
