@@ -25,10 +25,9 @@ public class LogicTestEnv {
 	public void setup() {
 		ResourceDatabasePopulator rdp = new ResourceDatabasePopulator();
 		rdp.addScript(new ClassPathResource("kr/or/ddit/testenv/dbInit.sql"));
+		rdp.addScript(new ClassPathResource("kr/or/ddit/testenv/dailyInit.sql"));
 		rdp.setContinueOnError(false);
 		DatabasePopulatorUtils.execute(rdp, datasource);
 	}
-	@Test
-	public void dummny() {}
-
+	
 }

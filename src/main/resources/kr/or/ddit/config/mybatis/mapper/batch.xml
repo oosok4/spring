@@ -21,6 +21,40 @@
      				(pid, cid, dt, cnt)
 	     				values (#{pid}, #{cid}, #{dt}, #{cnt})
      </insert>
+     
+     <delete id="deleteDaily" parameterType="string">
+     	delete daily
+     	where dt like #{ym} || '%'
+     </delete>
+     
+     <insert id="createDaily" parameterType="string">
+     insert into daily
+		select cycle.cid,cycle.pid,cal.dt, cycle.cnt
+		from cycle,
+		(select to_char(to_date(#{ym},'yyyyMM') + (level-1),'yyyyMMdd') dt,
+		        to_char(to_date(#{ym},'yyyyMM') + (level-1),'d')day
+		from dual
+		connect by level &lt;= last_day(to_date(#{ym},'yyyyMM')) - to_date(#{ym},'yyyyMM')+1)cal
+<!-- 		꺽새를 해결하기위해서는 &lt; 를 사용하자 -->
+		where cycle.day = cal.day
+		order by cycle.cid,cycle.pid,cal.dt
+     
+     
+     </insert>
+     
+     <insert id="insertBatch" parameterType="batchVo">
+		insert into batch values(seq_batch.nextval, #{bcd},#{st},sysdate,null)
+     </insert>
+     
+     <update id="updateBatch" parameterType="batchVo">
+     	<selectKey keyProperty="bid" resultType="int">
+     	select seq_batch.nextval bid from dual
+     	</selectKey>
+     	update batch ser st = #{st},
+     					ed_dt = sysdate
+     		where bid=#{bid}
+     </update>
+     
 </mapper>
 
 

@@ -1,5 +1,8 @@
 package kr.or.ddit.batch;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.annotation.Resource;
 
 import org.slf4j.Logger;
@@ -12,6 +15,8 @@ import org.springframework.batch.core.repository.JobExecutionAlreadyRunningExcep
 import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
 import org.springframework.batch.core.repository.JobRestartException;
 
+import kr.or.ddit.batch.service.IBatchService;
+
 public class YogultTask {
 	
 	private static final Logger logger = LoggerFactory.getLogger(YogultTask.class);
@@ -22,9 +27,14 @@ public class YogultTask {
 	@Resource(name="yogultJob")
 	private Job yogultJob;
 	
+	@Resource(name="batchService")
+	private IBatchService batchService;
+	
+	//매월 1일 새벽 1시 실행
 	public void yogultTask() throws JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, JobParametersInvalidException {
 		logger.debug("=================rangerTask=================");
-		jobLauhcher.run(yogultJob, new JobParameters());
+		SimpleDateFormat sdf  = new SimpleDateFormat("yyyyMM");
+		batchService.createDaily(sdf.format(new Date()));
 	}
 }
 

@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import javax.annotation.Resource;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -20,6 +21,7 @@ public class AopScanTest extends LogicTestEnv {
 	@Resource(name="boardService")
 	private IboardService boardService;
 
+	@Ignore
 	@Test
 	public void aopBeforetest() {
 		/***Given***/
