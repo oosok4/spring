@@ -43,14 +43,14 @@
      </insert>
      
      <insert id="insertBatch" parameterType="batchVo">
-		insert into batch values(seq_batch.nextval, #{bcd},#{st},sysdate,null)
+     	<selectKey keyColumn="bid" keyProperty="bid" resultType="int" order="BEFORE">
+     	select seq_batch.nextval bid from dual
+     	</selectKey>
+		insert into batch values(#{bid}, #{bcd},#{st},sysdate,null)
      </insert>
      
      <update id="updateBatch" parameterType="batchVo">
-     	<selectKey keyProperty="bid" resultType="int">
-     	select seq_batch.nextval bid from dual
-     	</selectKey>
-     	update batch ser st = #{st},
+     	update batch set st = #{st},
      					ed_dt = sysdate
      		where bid=#{bid}
      </update>

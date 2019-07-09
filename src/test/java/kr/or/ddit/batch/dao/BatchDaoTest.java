@@ -75,16 +75,15 @@ public class BatchDaoTest extends LogicTestEnv{
 	public void updatatteBatchTest() {
 		/***Given***/
 		BatchVo batchVo = new BatchVo();
-		batchVo.setBid(1);
-		batchVo.setSt("02");
 		batchVo.setBcd("01");
 		batchVo.setSt("01");
 		
 		batchDao.insertBatch(batchVo);
 		
+		batchVo.setSt("02");
 		
 		/***When***/
-		int updateCnt =  batchDao.insertBatch(batchVo);
+		int updateCnt =  batchDao.updateBatch(batchVo);
 		
 		/***Then***/
 		assertEquals(1, updateCnt);

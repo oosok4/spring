@@ -53,9 +53,9 @@ public class BatchDao implements IBatchDao {
 
 
 	@Override
-	public int updateCnt(String st) {
+	public int updateBatch(BatchVo batchVo) {
 		// TODO Auto-generated method stub
-		return sqlSession.update("batch.updateBatch",st);
+		return sqlSession.update("batch.updateBatch",batchVo);
 	}
 
 }

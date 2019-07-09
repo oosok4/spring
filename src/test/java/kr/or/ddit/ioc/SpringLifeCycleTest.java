@@ -12,6 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.or.ddit.ioc.placeholder.DbInfo;
+import kr.or.ddit.testenv.LogicTestEnv;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:kr/or/ddit/ioc/application-ioc-placeholder.xml")

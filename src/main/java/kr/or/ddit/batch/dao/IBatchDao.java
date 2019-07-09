@@ -40,6 +40,6 @@ public interface IBatchDao {
 	* @return
 	* Method 설명 :
 	 */
-	int updateCnt(String ym);
+	int updateBatch(BatchVo batchVo);
 
 }

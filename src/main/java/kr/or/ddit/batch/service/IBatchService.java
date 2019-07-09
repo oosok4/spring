@@ -1,5 +1,7 @@
 package kr.or.ddit.batch.service;
 
+import kr.or.ddit.batch.model.BatchVo;
+
 public interface IBatchService {
 
 	/**
@@ -12,4 +14,6 @@ public interface IBatchService {
 	* Method 설명 :일실적 일괄 생성
 	 */
 	int createDaily(String ym);
+	
+	
 }
